@@ -109,6 +109,14 @@
                 <include>**/encoder-1.1.jar</include>
             </includes>
         </fileSet-->
+    <fileSet>
+            <directory>src/main/conf/</directory>
+            <outputDirectory>${pom.artifactId}-${pom.version}/repository/conf/identity/</outputDirectory>
+            <includes>
+                <include>**/sso-idp-config.xml</include>
+                <include>**/application-authentication.xml</include>
+            </includes>
+    </fileSet>
 	<fileSet>
             <directory>../../distribution/product/target/repository/database</directory>
             <outputDirectory>wso2am-${pom.version}/repository/database</outputDirectory>
@@ -116,17 +124,17 @@
                 <include>**/WSO2AM_DB.h2.db</include>
             </includes>
         </fileSet>
-        <!--fileSet>
-          <directory>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/conf/security</directory>
-          <outputDirectory>wso2am-${pom.version}/repository/conf/security</outputDirectory>
-
+        <fileSet>
+          <directory>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/conf/identity</directory>
+          <outputDirectory>wso2am-${pom.version}/repository/conf/identity</outputDirectory>
           <excludes>
                   <exclude>authenticators.xml</exclude>
                   <exclude>application-authentication.xml</exclude>
                   <exclude>cipher-text.properties</exclude>
                   <exclude>cipher-tool.properties</exclude>
+                  <exclude>sso-idp-config.xml</exclude>
           </excludes>
-        </fileSet-->
+        </fileSet>
 	<fileSet>
             <directory>src/main/assembly</directory>
             <outputDirectory>wso2am-${pom.version}/repository/deployment/server/jaggeryapps/store/site/tenant_themes</outputDirectory>
@@ -157,15 +165,6 @@
 	</fileSet>
 
         <!-- Start API Manager related -->
-        <fileSet>
-            <directory>
-                ../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/dbscripts/identity/application-mgt/
-            </directory>
-            <outputDirectory>wso2am-${pom.version}/dbscripts/identity/application-mgt</outputDirectory>
-            <includes>
-                <include>**/**.sql</include>
-            </includes>
-        </fileSet>
         <fileSet>
             <directory>
                 ../resources/sql/
@@ -681,16 +680,6 @@
             <source>../../p2-profile/product/target/wso2carbon-core-${carbon.kernel.version}/repository/conf/tomcat/webapp-classloading-environments.xml</source>
             <outputDirectory>wso2am-${pom.version}/repository/conf/tomcat</outputDirectory>
             <filtered>true</filtered>
-            <fileMode>644</fileMode>
-        </file>
-        <file>
-            <source>../../p2-profile/product/target/wso2carbon-core-${carbon.kernel.version}/repository/conf/security/application-authentication.xml</source>
-            <outputDirectory>wso2am-${pom.version}/repository/conf/security</outputDirectory>
-            <fileMode>644</fileMode>
-        </file>
-        <file>
-            <source>../../p2-profile/product/target/wso2carbon-core-${carbon.kernel.version}/repository/components/features/org.wso2.carbon.tenant.common.server_4.4.1/conf/tenant-mgt.xml</source>
-            <outputDirectory>wso2am-${pom.version}/repository/conf/</outputDirectory>
             <fileMode>644</fileMode>
         </file>
         <file>
