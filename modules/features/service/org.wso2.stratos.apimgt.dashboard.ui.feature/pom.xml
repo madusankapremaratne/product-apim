@@ -36,7 +36,7 @@
         <dependency>
             <groupId>org.wso2.am</groupId>
             <artifactId>org.wso2.stratos.apimgt.dashboard.ui</artifactId>
-             <version>${apimgt.stratos.version}</version>
+             <version>${stratos.version}</version>
         </dependency>
         <dependency>
             <groupId>org.wso2.carbon</groupId>
